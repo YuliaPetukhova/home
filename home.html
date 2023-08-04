@@ -12,117 +12,104 @@
     <link rel="stylesheet" href="home.css">
 </head>
   <body>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="#">The easy household</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Дела по дому</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Участники</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Лента
-                    </a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Личная</a></li>
-                    <li><a class="dropdown-item" href="#">Семейная</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Еще какая-то</a></li>
-                    </ul>
-                </li>
-                </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" aria-current="page" href="#"><i class="far fa-user" style="color: #772d80;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Регистрация</a></li>
-                            <li><a class="dropdown-item" href="#">Авторизация</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Выйти</a></li>
-                            </ul>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" aria-current="page" href="#"><i class="fas fa-cog" style="color: #772d80;"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Изменить</a></li>
-                                    <li><a class="dropdown-item" href="#">Настроить профиль</a></li>
-                                    </ul>                      
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Поиск</button>
-                </form>
-            </div>
-            </div>
-        </nav>
 
-        
-            <button class="btn btn btn-outline-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Меню для мобильной версии</button>
-                <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Меню внизу</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body small">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Личная лента</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Семейная лента</a>
-                        </li>
-                </div>
-                </div>
 
-    <section>
+     <section>
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">Когда сделать</th>
-                <th scope="col">Задание по дому</th>
-                <th scope="col">Когда выполнено</th>
-                <th scope="col">Баллы</th>
-                <th scope="col">Готово</th>
+                <th class="col-2">Когда сделать</th>
+                <th class="col-4">Задание</th>
+                <th class="col-2"><i class="fab fa-btc"></i></th>
+                <th class="col-2"><i class="fas fa-check"></i></th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">2.09.23</th>
+                <td >2.09.23</td>
                 <td>Мусор вынести</td>
-                <td>12 августа</td>
                 <td>44</td>
                 <td><div>
                     <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
                   </div></td>
               </tr>
               <tr>
-                <th scope="row">12.08.23</th>
+                <td>12.08.23</td>
                 <td>Помыть ванну</td>
-                <td>1 сентября</td>
                 <td>30</td>
                 <td><div>
                     <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
                   </div></td>
               </tr>
               <tr>
-                <th scope="row">5.08.23</th>
+                <td >5.08.23</td>
                 <td>Постирать вещи</td>
-                <td>10 октября</td>
                 <td>50</td>
                 <td><div>
                     <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
                   </div></td>
               </tr>
+              
             </tbody>
           </table>
+    </section> 
+
+    <section>
+        <div class="fixed-bottom">
+        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+            <button type="button" href="#" class="btn btn-success">Семейная лента</button>
+            <button type="button" href="#" class="btn btn-secondary">Личная лента</button>
+        </div>
+        </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+<!-- <nav class="navbar fixed-bottom navbar-expand-lg">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">The easy household</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button> 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Дела по дому</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Участники</a>
+        </li>
+        <li class="nav-item dropup">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Лента
+            </a>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Личная</a></li>
+            <li><a class="dropdown-item" href="#">Семейная</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Еще какая-то</a></li>
+            </ul>
+        </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropup">
+                <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" aria-current="page" href="#"><i class="far fa-user" style="color: #772d80;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Регистрация</a></li>
+                    <li><a class="dropdown-item" href="#">Авторизация</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Выйти</a></li>
+                    </ul>
+                    <li class="nav-item dropup">
+                        <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" aria-current="page" href="#"><i class="fas fa-cog" style="color: #772d80;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Изменить</a></li>
+                            <li><a class="dropdown-item" href="#">Настроить профиль</a></li>
+                            </ul>                      
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>  -->

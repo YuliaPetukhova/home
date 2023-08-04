@@ -3,12 +3,15 @@ html{
 }
 
 body{
+    position: relative;
     font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 400;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     background-color: aliceblue;
     min-width: 320px;
+    margin: 5px 0px;
+    padding: 5px 10px 1px 0px;
 }
 
 img{
@@ -17,21 +20,24 @@ img{
 }
 
 section{
-    padding: 50px 0;
+    padding: 0px 20px 10px 10px;
 }
 
 /*---------------HEADER------------  */
-.navbar-expand-lg .navbar-nav .nav-link{
-    color: black;
+.navbar-expand-lg .navbar-nav {
+    color: rgb(255, 255, 255);
     font-weight: 500;
     text-transform: uppercase;
 }
 
+nav.navbar.fixed-bottom.navbar-expand-lg {
+    background-color: rgb(166, 190, 126);
+}
 .top-menu li a::after{
     content: '';
     display: block;
     width: 100%;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     height: 1px;
     transition: all .3s;
     transform: scale(0);
@@ -40,40 +46,18 @@ section{
     transform: scale(1);
 }
 
-/*---------------MENU-BOTTOM------------  */
-.btn {
+/*---------------MENU-BUTTON------------  */
+.fixed-bottom {
+    padding: 0px 10px 10px 10px;
 }
-.btn-primary {
-}
-.offcanvas {
-}
-.offcanvas-bottom {
+.btn-group {
 
 }
-.offcanvas-header {
+.btn-group-lg {
 }
-.offcanvas-title {
+.btn {
 }
-.btn-close {
-    
+.btn-success {
 }
-.offcanvas-body {
-}
-.small {
-}
-.navbar-nav {
-}
-.me-auto {
-}
-.mb-2 {
-}
-.mb-lg-0 {
-}
-.top-menu {
-}
-.nav-item {
-}
-.nav-link {
-}
-.active {
+.btn-secondary {
 }
