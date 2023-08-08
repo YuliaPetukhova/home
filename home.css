@@ -33,11 +33,11 @@ section{
 
 .topnav {
     text-decoration: none; /* Убираем подчеркивание у ссылок */
-  color: #96009b; /* Цвет ссылки */
+  color: #278a0094; /* Цвет ссылки */
 }
 .topnav a {
     text-decoration: none; /* Убираем подчеркивание у ссылок */
-    color: #96009b; /* Цвет ссылки */
+    color: #278a0094; /* Цвет ссылки */
 }
 
 .topnav a:hover {
@@ -49,16 +49,6 @@ section{
 }
 /*---------------MENU-BUTTON------------  */
 
-#more{
-    display: none;
-}
-
-el.style.removeProperty('zoom');
-
-.task.short{
-    white-space: nowrap; /* Запрещаем перенос строк */
-    overflow: hidden; /* Обрезаем все, что не помещается в область */
-    background: #fc0; /* Цвет фона */
-    padding: 5px; /* Поля вокруг текста */
-    text-overflow: ellipsis; 
+.short{
+    display: block;
 }

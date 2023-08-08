@@ -9,44 +9,20 @@ var currentScrollPos = window.pageYOffset;
   prevScrollpos = currentScrollPos;
 }
 
-
 /*-------READ-MORE---------------------------------*/
-// function readMore(){
-//     var dots = document.getElementById("dots");
-//     var more = document.getElementById("more");
-//     var btn = document.getElementById("btn");
-
-//     if(dots.style.display === "none"){
-//         dots.style.display = "inline";
-//         btn.innerHTML = "Подробнее";
-//         more.style.display = "none";
-//     } else {
-//         dots.style.display = "none";
-//         btn.innerHTML = "Скрыть";
-//         more.style.display = "inline";
-//     }
-// }
-
-
-// if (document.addEventListener){
-//     document.addEventListener("click", function(event)){
-//         var targetElement = event.target;
-//         console.log(targetElement);
-//     };
-// } else if (document.attachEvent) {    
-//     document.attachEvent("onclick", function(){
-//         var targetElement = event.target;
-//         console.log(targetElement);
-//     });
-// }
-
-
 const taskCells = document.querySelectorAll('td.task');
 
-function handleClick(event) {
-    console.log(event.target)
-    console.log("hi,bitch")
-}
 taskCells.forEach(taskCell => {
-    taskCell.addEventListener("click", handleClick);
+    taskCell.addEventListener("click", showHide);
 });
+
+function showHide(event) {
+  //Если элемент с id-шником element_id существует
+  const cell = event.target;
+  const td = cell.parentElement;
+  const short = td.getElementsByClassName('short')[0];
+  const full = td.getElementsByClassName('full')[0];
+
+    short.classList.toggle('d-none');
+    full.classList.toggle('d-none');
+}   
