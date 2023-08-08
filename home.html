@@ -14,6 +14,20 @@
   <body>
 
 
+    <div class="topnav">
+    
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Баллы/Целевые</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Имя</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-cog"></i></a>
+        </li>
+    </div>
+
      <section>
         <table class="table">
             <thead>
@@ -25,27 +39,39 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td >2.09.23</td>
-                <td>Мусор вынести</td>
-                <td>44</td>
-                <td><div>
+              <tr id="row-0">
+                <td class="date">2.09.23</td>
+                <td class="task">
+                  <div class="short">Постирать вещи...</div>
+                  <div class="full">,блаблаПостирать вещиПостирать Постирать вещиПостирать
+                    Постирать вещиПостирать Постирать вещиПостирать</div>
+                </td>
+                <td class="credit">44</td>
+                <td class="actions"><div>
                     <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
                   </div></td>
               </tr>
-              <tr>
-                <td>12.08.23</td>
-                <td>Помыть ванну</td>
-                <td>30</td>
-                <td><div>
+              <tr id="row-1">
+                <td class="date">12.08.23</td>
+                <td class="task">
+                    <div class="short">Постирать вещи...</div>
+                    <div class="full">Постирать вещиПостирать Постирать вещиПостирать
+                      Постирать вещиПостирать Постирать вещиПостирать </div>
+                </td>
+                <td class="credit">30</td>
+                <td class="actions"><div>
                     <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
                   </div></td>
               </tr>
-              <tr>
-                <td >5.08.23</td>
-                <td>Постирать вещи</td>
-                <td>50</td>
-                <td><div>
+              <tr id="row-2">
+                <td class="date">5.08.23</td>
+                <td class="task">
+                  <div class="short">Постирать вещи...</div>
+                  <div class="full">Постирать вещиПостирать Постирать вещиПостирать
+                    Постирать вещиПостирать Постирать вещиПостирать </div>
+              </td>
+                <td class="credit">50</td>
+                <td class="actions"><div>
                     <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
                   </div></td>
               </tr>
@@ -55,14 +81,17 @@
     </section> 
 
     <section>
+      <div class="text-center">
         <div class="fixed-bottom">
-        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-            <button type="button" href="#" class="btn btn-success">Семейная лента</button>
-            <button type="button" href="#" class="btn btn-secondary">Личная лента</button>
+          <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+              <button href="#" class="btn btn-secondary"><i class="fa fa-home"></i></button>
+              <button href="#" class="btn btn-secondary"><i class="fa fa-user icon"></i></button>
+          </div>
         </div>
-        </div>
+      </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="home-script.js"></script>
   </body>
 </html>
 

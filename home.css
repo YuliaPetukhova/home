@@ -10,8 +10,8 @@ body{
     color: rgb(255, 255, 255);
     background-color: aliceblue;
     min-width: 320px;
-    margin: 5px 0px;
-    padding: 5px 10px 1px 0px;
+    margin: 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 img{
@@ -24,40 +24,41 @@ section{
 }
 
 /*---------------HEADER------------  */
-.navbar-expand-lg .navbar-nav {
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-    text-transform: uppercase;
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    /* display: flex; */
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
 }
 
-nav.navbar.fixed-bottom.navbar-expand-lg {
-    background-color: rgb(166, 190, 126);
+.topnav {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+  color: #96009b; /* Цвет ссылки */
 }
-.top-menu li a::after{
-    content: '';
-    display: block;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    height: 1px;
-    transition: all .3s;
-    transform: scale(0);
-}
-.top-menu li a:hover::after{
-    transform: scale(1);
+.topnav a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #96009b; /* Цвет ссылки */
 }
 
+.topnav a:hover {
+    text-decoration: underline;
+}
+
+.topnav a.nav-item{
+    text-decoration: underline;
+}
 /*---------------MENU-BUTTON------------  */
-.fixed-bottom {
-    padding: 0px 10px 10px 10px;
-}
-.btn-group {
 
+#more{
+    display: none;
 }
-.btn-group-lg {
-}
-.btn {
-}
-.btn-success {
-}
-.btn-secondary {
+
+el.style.removeProperty('zoom');
+
+.task.short{
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    background: #fc0; /* Цвет фона */
+    padding: 5px; /* Поля вокруг текста */
+    text-overflow: ellipsis; 
 }
