@@ -1,3 +1,5 @@
+'use strict';
+
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 let currentScrollPos = window.pageYOffset;
@@ -17,7 +19,6 @@ taskCells.forEach(taskCell => {
 });
 
 function showHide(event) {
-  //Если элемент с id-шником element_id существует
   const cell = event.target;
   const td = cell.parentElement;
   const short = td.getElementsByClassName('short')[0];
