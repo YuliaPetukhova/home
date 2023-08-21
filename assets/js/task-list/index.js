@@ -1,6 +1,6 @@
 'use strict';
 
-import {HomeTaskList} from "./class/home-task-list";
+import {HomeTaskList} from "./class/home-task-list.js";
 
 let homeTaskList = new HomeTaskList();
 homeTaskList.init();

@@ -30,6 +30,9 @@
 
 //     short.classList.toggle('d-none');
 //     full.classList.toggle('d-none');
+//     full.classList.add('d-none');
+//     full.classList.remove('d-none');
+//     full.classList.has('d-none');
 // }   
 
 
