@@ -1,6 +1,7 @@
 'use strict';
 
-export class HomeTaskList{
+export class HomeTaskList
+{
     ExpandTasksOnClick() {
         const taskCells = document.querySelectorAll('td.task');
         
