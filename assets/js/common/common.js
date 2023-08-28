@@ -1,5 +1,16 @@
 'use strict';
 
+axios.get('https://www.boredapi.com/api/activity')
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+
+
+
 class BottomMenu
 {
     SHOW_TIMER = 2000;
@@ -70,3 +81,5 @@ class BottomMenu
 
 let bottomMenuObject = new BottomMenu();
 bottomMenuObject.init();
+
+
