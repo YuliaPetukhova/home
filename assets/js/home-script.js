@@ -1,8 +1,7 @@
 'use strict';
 
-class HomeTaskList{
-
-
+class HomeTaskList
+{
     ExpandTasksOnClick() {
         const taskCells = document.querySelectorAll('td.task');
         
