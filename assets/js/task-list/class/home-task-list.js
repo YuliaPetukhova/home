@@ -2,25 +2,28 @@
 
 export class HomeTaskList
 {
-    ExpandTasksOnClick() {
-        const taskCells = document.querySelectorAll('td.task');
+    toggleTasksOnClick() {
+        const self = this;
+        document.addEventListener("click", function(e) {
+            const target = e.target.closest('td.task');
         
-        taskCells.forEach(taskCell => {
-            taskCell.addEventListener("click", showHide);
+            if(target) {
+                self.showHide(e)
+            }
         });
-        
-        function showHide(event) {
-            const cell = event.target;
-            const td = cell.parentElement;
-            const short = td.getElementsByClassName('short')[0];
-            const full = td.getElementsByClassName('full')[0];
-        
-            short.classList.toggle('d-none');
-            full.classList.toggle('d-none');
-        }   
+    }
+
+    showHide(event) {
+        const cell = event.target;
+        const td = cell.parentElement;
+        const short = td.getElementsByClassName('short')[0];
+        const full = td.getElementsByClassName('full')[0];
+    
+        short.classList.toggle('d-none');
+        full.classList.toggle('d-none');
     }
 
     init() {
-        this.ExpandTasksOnClick();
+        this.toggleTasksOnClick();
     }
 }
