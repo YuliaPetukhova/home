@@ -44,44 +44,17 @@ export class HtmlGenerator
     // // })
     // };
 
-    init() {
-        this.getStringTable();
-    }
+    // init() {
+        // this.getStringTable();
+    // }
 
     generateTable(data) {
         let table = document.createElement("table");
 
         table.classList.add('generatedTable');
         
-
-        // let thead = generateThead(data);
-        let thead = document.createElement("thead");
-        let trHead = document.createElement("tr");
-        let thType = document.createElement("th");
-        let thSetup = document.createElement("th");
-        let thPunchline = document.createElement("th");
-        let thId = document.createElement("th");
-
-        thType.classList.add('col-2');
-        thType.innerHTML = 'Когда сделать';
-        thSetup.classList.add('col-4');
-        thSetup.innerHTML = 'Задание';
-        thPunchline.classList.add('col-2');
-        thPunchline.innerHTML = '<i class="fab fa-btc"></i>';
-        thId.classList.add('col-2');
-        thId.innerHTML = '<i class="fas fa-check"></i>';
-
+        let thead = this.generateThead(data);
         table.appendChild(thead);
-
-        thead.appendChild(trHead);
-
-        trHead.appendChild(thType);
-        trHead.appendChild(thSetup);
-        trHead.appendChild(thPunchline);
-        trHead.appendChild(thId);
-
-        console.log(thead);
-        // return thead;
         
 
         let tbody = this.generateTbody(data);
@@ -92,42 +65,98 @@ export class HtmlGenerator
         // table.appendChild(tbody);
 
     }
-    generateTbody(data) {
-        let tbody = document.createElement("tbody")
-        data.forEach((jsonRow, index) => {
-            let row = document.createElement("tr");
-            let props = Object.getOwnPropertyNames(jsonRow);
-            props.forEach((propertyName) => {
-                // generateTd
-                let td = document.createElement("td");
-                td.innerHTML = propertyName;
-                
-                row.appendChild(td)
-                console.log(tbody);
-            })
-            // const row = generateRow(jsonRow, index);
+
+    generateThead(){
+        let thead = document.createElement("thead");
+
+        let trHead = this.generateTrhead();
+        thead.appendChild(trHead);
+
+        return thead;
+    }
+
+    generateTrhead(){
+        let trHead = document.createElement("tr");
+        let thType = document.createElement("th");
+        let thSetup = document.createElement("th");
+        let thPunchline = document.createElement("th");
+        let thId = document.createElement("th");
+
+        thType.classList.add('col-2');
+        thType.innerHTML = 'Когда сделать';
+
+        thSetup.classList.add('col-4');
+        thSetup.innerHTML = 'Задание';
+
+        thPunchline.classList.add('col-2');
+        thPunchline.innerHTML = '<i class="fab fa-btc"></i>';
+
+        thId.classList.add('col-2');
+        thId.innerHTML = '<i class="fas fa-check"></i>';
+
+        // thead.appendChild(trHead);
+
+        trHead.appendChild(thType);
+        trHead.appendChild(thSetup);
+        trHead.appendChild(thPunchline);
+        trHead.appendChild(thId);
+
+        return trHead;
+    }
+
+
+    generateTbody(tbodyData) {
+        let tbody = document.createElement("tbody");
+
+        tbodyData.forEach((rowData, rowIndex) => {
+            let row = this.generateRow(rowData, rowIndex);
             tbody.appendChild(row);
         });
-        
 
         return tbody;
     }
 
-//     generateRow(jsonRow, index) {
-//         let row = 'row-' + index;
-//     //     jsonRow.получитьСписокСвойств().forEach((propertyValue, propertyKey) => {
-//     //         row += generateColumn(propertyValue, propertyKey)
-//     //     })
+    generateRow(rowData, rowIndex){
+        let row = document.createElement("tr");
 
-//         return row;
-//     }
-}
+        row.classList.add('row-' + rowIndex);
 
-    // generateColumn() {
+        for (const [columnIndex, columnData] of Object.entries(rowData)) {
+            let column = this.generateColumn(columnIndex, columnData);
+            row.appendChild(column);
+        }
 
+        return row;
+    }
+
+    generateColumn(columnIndex, columnData){
+        let td = document.createElement("td");
+
+        td.classList.add(columnIndex);
+        td.innerHTML = columnData;
+
+        return td;
+    }
+
+
+
+    // generateTbody(data) {
+    //     let tbody = document.createElement("tbody")
+    //     data.forEach((jsonRow, index) => {
+    //         let row = document.createElement("tr");
+    //         row.classList.add('row-' + index);
+
+    //         for (const [key, value] of Object.entries(jsonRow)) {
+    //             let td = document.createElement("td");
+    //             td.classList.add(key);
+    //             td.innerHTML = value;
+                
+    //             row.appendChild(td)
+    //         }
+            
+    //         tbody.appendChild(row);
+    //     });
+
+    //     return tbody;
     // }
-// }
-
-
-// tdDate.innerHTML = propertyValue;
-//    tbody.appendChild(tdDate);
+}
