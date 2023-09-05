@@ -19,13 +19,23 @@
         <h1>Вход/Регистрация</h1>
            
         <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-4">
-              <label for="validationCustomUsername" class="form-label">Логин</label>
+          <div class="col-md-6">
+            <label for="validationCustomUsername" class="form-label">Логин</label>
+            <div class="input-group has-validation">
+              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+              <div class="invalid-feedback">
+                Введите Ваш логин.
+              </div>
+            </div>
+          </div>
+
+            <div class="col-md-6">
+              <label for="validationCustomUsername" class="form-label">Почта</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend">
                 <div class="invalid-feedback">
-                  Введите Ваш логин.
+                  Введите Вашу почту.
                 </div>
               </div>
             </div>
@@ -36,25 +46,6 @@
                     Введите Ваш пароль.
                   </div>
             </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                  Я соглашаюсь с условиями
-                </label>
-                <div class="invalid-feedback">
-                    Вы должны согласиться перед входом в систему.
-                </div>
-              </div>
-            </div>
-            <div class="col-auto">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                  <label class="form-check-label" for="autoSizingCheck">
-                    Запомнить меня
-                  </label>
-                </div>
-              </div>
             <div class="col-12">
               <button class="btn btn-warning" type="submit">Войти
               </button>

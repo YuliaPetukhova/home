@@ -22,11 +22,9 @@
                 </a>
 
                 <nav class="header__menu menu">
-                    <ul class="menu__list justify-content-end">
-                        <li class="menu__item">
-                        <a class="menu__link" aria-current="page" href="login.html">Вход/Регистрация</a>
-                        </li>
-                    </ul> 
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Вход/Регистрация
+                    </button>
                 </nav>
             </div>
         </header>
@@ -109,6 +107,55 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+
+                <!-- Button trigger modal -->
+                
+        
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Вход/Регистрация</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="mb-3">
+                          <label for="validationCustomUsername" class="form-label">Логин</label>
+                          <div class="input-group has-validation">
+                            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                              Введите Ваш логин.
+                            </div>
+                          </div>
+                        </div>
+              
+                          <div class="mb-3">
+                            <label for="validationCustomUsername" class="form-label">Почта</label>
+                            <div class="input-group has-validation">
+                              <span class="input-group-text" id="inputGroupPrepend">@</span>
+                              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend">
+                              <div class="invalid-feedback">
+                                Введите Вашу почту.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                              <label for="inputPassword4" class="form-label">Пароль</label>
+                              <input type="password" class="form-control" id="inputPassword4" required>
+                              <div class="invalid-feedback">
+                                  Введите Ваш пароль.
+                                </div>
+                          </div>
+                          <div class="col-12">
+                            <button class="btn btn-warning" type="submit">Войти</button>
+                          </div>
+                        </form>
+                </div>
+            </div>
+            </div>
+        </div>
 
 
 

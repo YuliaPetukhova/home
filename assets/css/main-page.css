@@ -60,6 +60,7 @@ img {
 	display: flex;
 	min-height: 104px;
 	align-items: center;
+	justify-content: space-between;
 }
 @media (max-width: 479px) {
 	.header__container {
@@ -73,6 +74,7 @@ img {
 }
 .header__menu {
 	margin: 0px 0px 0px 133px;
+	text-align: right;
 }
 @media (max-width: 992px) {
 	.header__menu {

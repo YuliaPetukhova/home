@@ -6,20 +6,17 @@ body{
     position: relative;
     font-family: 'Open Sans';
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     min-width: 320px;
-    margin: 0px 0px;
-    padding: 0px 0px 0px 0px;
+    margin: 0 auto;
+    padding: 10px 0px 10px 0px;
 }
 
 
 /*---------------HEADER------------  */
-.topnav {
-    text-decoration: none; /* Убираем подчеркивание у ссылок */
-  color: #00000094; /* Цвет ссылки */
-}
+
 .topnav a {
     text-decoration: none; /* Убираем подчеркивание у ссылок */
     color: #00000094; /* Цвет ссылки */
@@ -27,6 +24,7 @@ body{
 
 .topnav a:hover {
     text-decoration: underline;
+    color: #adadad94;
 }
 
 .topnav a.nav-item{
@@ -39,12 +37,13 @@ body{
 }
 
 section{
-    padding: 10px 10px 10px 10px;
     font-family: 'Open Sans';
     font-size: 16px;
     font-weight: 400;
     color: rgb(0, 0, 0);
     display: block;
+    margin: 0 auto;
+    padding: 10px 0px 10px 0px;
 }
 
 .col-2, .col-4, td{
@@ -59,7 +58,14 @@ tr, th, td{
     border: 1px solid black;
 }
 
+tr:hover {
+    background-color: rgb(250, 248, 117);
+}
+
+
 #task-list{
     display: block;
     margin: 0 auto;
+
 }
+

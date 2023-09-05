@@ -52,6 +52,8 @@ export class HtmlGenerator
         let table = document.createElement("table");
 
         table.classList.add('generatedTable');
+        table.classList.add('table');
+        table.classList.add('table-striped');
         
         let thead = this.generateThead(data);
         table.appendChild(thead);
