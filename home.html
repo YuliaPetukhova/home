@@ -85,16 +85,88 @@
           </table> -->
     </section> 
 
-    <section id="bottom-menu">
-          <div class="fixed-bottom text-center">
-              <button href="#" class="btn btn-secondary col-5"><i class="fa fa-home"></i></button>
-              <button href="#" class="btn btn-secondary col-5"><i class="fa fa-user icon"></i></button>
-          </div>
+    
+    
+    
+    <section id="bottom-menu" class="fixed-bottom">
+		<div id="new-task">
+			<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+			<i style='font-size:24px' class='fas'>&#xf044;</i>
+			</button>
+		</div>
+		<div class="text-center">
+			<button href="#" class="btn btn-secondary col-5"><i class="fa fa-home"></i></button>
+			<button href="#" class="btn btn-secondary col-5"><i class="fa fa-user icon"></i></button>
+		</div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Создать задачу</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="task-table">Группа задач</label>
+                <input list="tasks" name="task-add" id="task-add">
+                <datalist id="tasks">
+                  <option value="Посуда">
+                  <option value="Мусор">
+                  <option value="Пол">
+                  <option value="Магазин">
+                </datalist>
+              </div>
+    
+              <div class="mb-3">
+                <label for="user-home">Кто выполняет</label>
+                <input list="users" name="user-add" id="user-add">
+                <datalist id="users">
+                  <option value="Слуга">
+                  <option value="Никита">
+                  <option value="Юля">
+                </datalist>
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Текст</label>
+                <textarea class="form-control" id="message-text" required></textarea>
+              </div>
+              <div>
+                <label for="meeting-time">Срок</label>
+
+                <input
+                  type="datetime-local"
+                  id="meeting-time"
+                  name="meeting-time"
+                  value="2023-09-06T13:30"
+                  min="2023-09-06T00:00"
+                  max="2100-12-31T00:00"
+                  required>
+              </div>
+
+              
+                
+             
+              
+
+                <div class="col-12">
+                  <button class="btn btn-warning" type="submit">Создать
+                  </button>
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     
     <script type="module" src="assets/js/common/common.js"></script>
     <script type="module" src="assets/js/task-list/index.js"></script>
     <script type="module" src="assets/js/task-list/get-api.js"></script>
+    <script src="assets/js/main-page/main-page.js"></script>
    
    
     <!-- <script type="module" src="assets/js/task-list/class/home-task-list.js"></script> -->
