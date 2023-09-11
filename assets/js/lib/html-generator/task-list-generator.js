@@ -1,27 +1,55 @@
-import {Task} from "./../DTO/Task";
+import {Task} from "../DTO/Task.js";
 
 export class TaskListGenerator
 {
     generateList(data) {
         
-        data.forEach((rowData, rowIndex) => {
-            let task = new Task(rowData.id, rowData.text, rowData.createdAt,rowData.doneAt)
-            console.log(task)
-            let row = this.generateCard(task);
-            tbody.appendChild(row);
-        });
+        // data.forEach((rowData, rowIndex) => {
+        //     let task = new Task(rowData.id, rowData.text, rowData.createdAt,rowData.doneAt);
+        //     console.log(task);
+        //     let row = this.generateCard(task);
+        //     tbody.appendChild(row);
+        // });
     }
 
-    generaCard(data){
+    generateCard(data){
         let card = document.createElement("div");
         card.classList.add('container');
         card.classList.add('text-center');
         card.appendChild(tbody);
         console.log(card);
         return card;
-        
     }
     
+    generateRow(){
+        let row = document.createElement("div");
+        row.classList.add('row');
+        row.classList.add("row-cols-2");
+
+        let columnDate = document.createElement("div");
+
+        columnDate.classList.add('col-sm-4');
+        columnDate.innerHTML = 'Дедлайн';
+
+        let columnPrice = document.createElement("div");
+
+        columnPrice.classList.add('col-sm-4');
+        columnPrice.innerHTML = 'Баллы';
+
+        columnText.classList.add('col')
+
+        columnCheck.classList.add('col-sm-4');
+        columnCheck.classList.add('actions');
+        columnCheck.innerHTML = '<i class="fas fa-check"></i>';
+
+
+        // task.appendChild(row);
+        row.appendChild(columnDate);
+        row.appendChild(columnPrice);
+        row.appendChild(columnCheck);
+
+        return row;
+    }
 
     /**
      * @param {Task} task 

@@ -29,5 +29,5 @@ export class Task
     }
 }
 
-let task = new Task(id, text, createdAt, doneAt);
-task
+// let task = new Task(id, text, createdAt, doneAt);
+// task
