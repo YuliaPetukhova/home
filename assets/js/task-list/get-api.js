@@ -1,10 +1,11 @@
-import {HtmlGenerator} from "./../lib/html-generator.js";
+import {HtmlGenerator} from "./../lib/";
 
 class GetTableByApi
 {
     getStringTable(){
         axios.get('https://official-joke-api.appspot.com/jokes/ten')
         .then(function (response) {
+            console.log(response);
             let taskList = document.getElementById("task-list");
 
             let htmlGenerator = new HtmlGenerator();

@@ -27,4 +27,17 @@ body {
 
 tr:hover {
   background-color: rgb(250, 248, 117);
+}
+
+.row {
+  background-color: white;
+}
+
+.row-cols-2 > * {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.text-center {
+  padding-bottom: 15px;
 }/*# sourceMappingURL=task-list.css.map */
