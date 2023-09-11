@@ -1,17 +1,17 @@
-import {HtmlGenerator} from "./../lib/";
+import {TaskListGenerator} from "./../lib/html-generator/task-list-generator.js";
 
 class GetTableByApi
 {
     getStringTable(){
         axios.get('https://official-joke-api.appspot.com/jokes/ten')
         .then(function (response) {
-            console.log(response);
+            // console.log(response);
             let taskList = document.getElementById("task-list");
 
-            let htmlGenerator = new HtmlGenerator();
-            let generatedTable = htmlGenerator.generateTable(response.data);
+            let taskListlGenerator = new TaskListGenerator();
+            let generatedList = taskListlGenerator.generateList(response.data);
 
-            taskList.appendChild(generatedTable);
+            taskList.appendChild(generatedList);
         })
         .catch(function (error) {
             console.log(error);

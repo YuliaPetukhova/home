@@ -1,13 +1,27 @@
+import {Task} from "./../DTO/Task";
+
 export class TaskListGenerator
 {
     generateList(data) {
         
         data.forEach((rowData, rowIndex) => {
             let task = new Task(rowData.id, rowData.text, rowData.createdAt,rowData.doneAt)
+            console.log(task)
             let row = this.generateCard(task);
             tbody.appendChild(row);
         });
     }
+
+    generaCard(data){
+        let card = document.createElement("div");
+        card.classList.add('container');
+        card.classList.add('text-center');
+        card.appendChild(tbody);
+        console.log(card);
+        return card;
+        
+    }
+    
 
     /**
      * @param {Task} task 
@@ -63,95 +77,95 @@ export class TaskListGenerator
         // this.getStringTable();
     // }
 
-    generateTable(data) {
-        let table = document.createElement("div");
+//     generateTable(data) {
+//         let table = document.createElement("div");
 
-        table.classList.add('generatedCard');
-        table.classList.add('container');
-        table.classList.add('text-center');
+//         table.classList.add('generatedCard');
+//         table.classList.add('container');
+//         table.classList.add('text-center');
         
-        let thead = this.generateThead(data);
-        table.appendChild(thead);
+//         let thead = this.generateThead(data);
+//         table.appendChild(thead);
         
 
-        let tbody = this.generateTbody(data);
-        table.appendChild(tbody);
-        return table;
+//         let tbody = this.generateTbody(data);
+//         table.appendChild(tbody);
+//         return table;
 
-        // table.appendChild(thead);
-        // table.appendChild(tbody);
+//         // table.appendChild(thead);
+//         // table.appendChild(tbody);
 
-    }
+//     }
 
-    generateThead(){
-        let thead = document.createElement("thead");
+//     generateThead(){
+//         let thead = document.createElement("thead");
 
-        let trHead = this.generateTrhead();
-        thead.appendChild(trHead);
+//         let trHead = this.generateTrhead();
+//         thead.appendChild(trHead);
 
-        return thead;
-    }
+//         return thead;
+//     }
 
-    generateTrhead(){
-        let trHead = document.createElement("tr");
-        let thType = document.createElement("th");
-        let thSetup = document.createElement("th");
-        let thPunchline = document.createElement("th");
-        let thId = document.createElement("th");
+//     generateTrhead(){
+//         let trHead = document.createElement("tr");
+//         let thType = document.createElement("th");
+//         let thSetup = document.createElement("th");
+//         let thPunchline = document.createElement("th");
+//         let thId = document.createElement("th");
 
-        thType.classList.add('col-2');
-        thType.innerHTML = 'Когда сделать';
+//         thType.classList.add('col-2');
+//         thType.innerHTML = 'Когда сделать';
 
-        thSetup.classList.add('col-4');
-        thSetup.innerHTML = 'Задание';
+//         thSetup.classList.add('col-4');
+//         thSetup.innerHTML = 'Задание';
 
-        thPunchline.classList.add('col-2');
-        thPunchline.innerHTML = '<i class="fab fa-btc"></i>';
+//         thPunchline.classList.add('col-2');
+//         thPunchline.innerHTML = '<i class="fab fa-btc"></i>';
 
-        thId.classList.add('col-2');
-        thId.innerHTML = '<i class="fas fa-check"></i>';
+//         thId.classList.add('col-2');
+//         thId.innerHTML = '<i class="fas fa-check"></i>';
 
-        // thead.appendChild(trHead);
+//         // thead.appendChild(trHead);
 
-        trHead.appendChild(thType);
-        trHead.appendChild(thSetup);
-        trHead.appendChild(thPunchline);
-        trHead.appendChild(thId);
+//         trHead.appendChild(thType);
+//         trHead.appendChild(thSetup);
+//         trHead.appendChild(thPunchline);
+//         trHead.appendChild(thId);
 
-        return trHead;
-    }
+//         return trHead;
+//     }
 
 
-    generateTbody(tbodyData) {
-        let tbody = document.createElement("tbody");
+//     generateTbody(tbodyData) {
+//         let tbody = document.createElement("tbody");
 
-        tbodyData.forEach((rowData, rowIndex) => {
-            let row = this.generateRow(rowData, rowIndex);
-            tbody.appendChild(row);
-        });
+//         tbodyData.forEach((rowData, rowIndex) => {
+//             let row = this.generateRow(rowData, rowIndex);
+//             tbody.appendChild(row);
+//         });
 
-        return tbody;
-    }
+//         return tbody;
+//     }
 
-    generateRow(rowData, rowIndex){
-        let row = document.createElement("tr");
+//     generateRow(rowData, rowIndex){
+//         let row = document.createElement("tr");
 
-        row.classList.add('row-' + rowIndex);
+//         row.classList.add('row-' + rowIndex);
 
-        for (const [columnIndex, columnData] of Object.entries(rowData)) {
-            let column = this.generateColumn(columnIndex, columnData);
-            row.appendChild(column);
-        }
+//         for (const [columnIndex, columnData] of Object.entries(rowData)) {
+//             let column = this.generateColumn(columnIndex, columnData);
+//             row.appendChild(column);
+//         }
 
-        return row;
-    }
+//         return row;
+//     }
 
-    generateColumn(columnIndex, columnData){
-        let td = document.createElement("td");
+//     generateColumn(columnIndex, columnData){
+//         let td = document.createElement("td");
 
-        td.classList.add(columnIndex);
-        td.innerHTML = columnData;
+//         td.classList.add(columnIndex);
+//         td.innerHTML = columnData;
 
-        return td;
-    }
+//         return td;
+//     }
 }
