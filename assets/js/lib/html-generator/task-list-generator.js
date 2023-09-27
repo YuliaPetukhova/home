@@ -2,54 +2,100 @@ import {Task} from "../DTO/Task.js";
 
 export class TaskListGenerator
 {
-    generateList(data) {
-        
-        // data.forEach((rowData, rowIndex) => {
-        //     let task = new Task(rowData.id, rowData.text, rowData.createdAt,rowData.doneAt);
-        //     console.log(task);
-        //     let row = this.generateCard(task);
-        //     tbody.appendChild(row);
-        // });
+    generateList(tasks) {
+        console.log(tasks);
+
+        let contentSection = document.getElementById("content");
+        contentSection.classList.add('container');
+
+        let taskList = document.createElement("div");
+        taskList.classList.add('task-list');
+
+        tasks.forEach((rowData, rowIndex) => {
+            // console.log('rowData');
+            // console.log(rowData);
+            let task = new Task(rowData.id, rowData.text, rowData.createdAt,rowData.doneAt);
+            task.appendChild(taskList);
+            // console.log('task');
+            // console.log(task);
+            let card = this.generateCard(task);
+            card.appendChild(task);
+            console.log('card');
+            console.log(card);
+        });
     }
 
-    generateCard(data){
-        let card = document.createElement("div");
-        card.classList.add('container');
-        card.classList.add('text-center');
-        card.appendChild(tbody);
-        console.log(card);
-        return card;
+
+    generateCardBody(data){
+        let cardBody = document.createElement("div");
+        cardBody.classList.add('list-item-body');
+        cardBody.classList.add('row');
+        cardBody.classList.add('row-cols-3');
+        cardBody.appendChild(div);
+        console.log(cardBody);
+        return cardBody;
+    }
+
+    generateListItem(){
+        let colDate = document.createElement('div');
+        colDate.classList.add('list-item-date');
+        colDate.classList.add('col');
+        colDate.classList.add('text-muted');
+        colDate.innerHTML = 'Дедлайн';
+
+        let colGroup = document.createElement('div');
+        colGroup.classList.add('list-item-group');
+        colGroup.classList.add('col');
+        colGroup.classList.add('text-muted');
+        colGroup.innerHTML = 'Группа задач';
+
+        let colPrice = document.createElement('div');
+        colPrice.classList.add('list-item-price');
+        colPrice.classList.add('col');
+        colPrice.classList.add('text-muted');
+        colPrice.innerHTML = 'Баллы';
+
+        let colText = document.createElement('div');
+        colText.classList.add('list-item-text');
+        colText.classList.add('col');
+        colText.innerHTML = 'Текст задачи';
+
+        let colCheck = document.createElement('div');
+        colCheck.classList.add('list-item-check');
+        colCheck.classList.add('col');
+        
+
     }
     
-    generateRow(){
-        let row = document.createElement("div");
-        row.classList.add('row');
-        row.classList.add("row-cols-2");
+    // generateRow(){
+    //     let row = document.createElement("div");
+    //     row.classList.add('row');
+    //     row.classList.add("row-cols-2");
 
-        let columnDate = document.createElement("div");
+    //     let columnDate = document.createElement("div");
 
-        columnDate.classList.add('col-sm-4');
-        columnDate.innerHTML = 'Дедлайн';
+    //     columnDate.classList.add('col-sm-4');
+    //     columnDate.innerHTML = 'Дедлайн';
 
-        let columnPrice = document.createElement("div");
+    //     let columnPrice = document.createElement("div");
 
-        columnPrice.classList.add('col-sm-4');
-        columnPrice.innerHTML = 'Баллы';
+    //     columnPrice.classList.add('col-sm-4');
+    //     columnPrice.innerHTML = 'Баллы';
 
-        columnText.classList.add('col')
+    //     columnText.classList.add('col')
 
-        columnCheck.classList.add('col-sm-4');
-        columnCheck.classList.add('actions');
-        columnCheck.innerHTML = '<i class="fas fa-check"></i>';
+    //     columnCheck.classList.add('col-sm-4');
+    //     columnCheck.classList.add('actions');
+    //     columnCheck.innerHTML = '<i class="fas fa-check"></i>';
 
 
-        // task.appendChild(row);
-        row.appendChild(columnDate);
-        row.appendChild(columnPrice);
-        row.appendChild(columnCheck);
+    //     // task.appendChild(row);
+    //     row.appendChild(columnDate);
+    //     row.appendChild(columnPrice);
+    //     row.appendChild(columnCheck);
 
-        return row;
-    }
+    //     return row;
+    // }
 
     /**
      * @param {Task} task 

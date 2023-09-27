@@ -5,11 +5,11 @@ export class Task
     #createdAt;
     #doneAt;
 
-    constructor(id, text) {
+    constructor(id, text, createdAt, doneAt) {
         this.#id = id;
         this.#text = text;
-        this.#createdAt = Date.now();
-        this.#doneAt = null;
+        this.#createdAt = createdAt;
+        this.#doneAt = doneAt;
     }
 
     getId() {
