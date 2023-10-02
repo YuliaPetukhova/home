@@ -1,34 +1,39 @@
+
+$font-stack: 'Open Sans'
+$primary-color: #ffffff
+$task-color: #ececec
+$border-color: #6c757d
+$border-color-check: rgb(115 207 104 / 25%)
+$checked-color:  green
+
 html,
 body
     height: 100%
-    background: #fafafa
+    background: $primary-color
     font-size: 16px
     font-weight: 700
-    font-family: 'Open Sans'
-//---------------HEADER------------
-.topnav a
-    text-decoration: none
-    color: #00000094
+    font: $font-stack
 
-.topnav a:hover 
-    text-decoration: underline
-    color: #adadad94
+.container 
+    width: 100%
+    height: auto
 
-.topnav a.nav-item
-    text-decoration: underline
+#content
+    border: 2px solid $task-color
+    box-shadow: 3px 3px 4px $task-color
 
-.col-2, .col-4, td
-    text-align: center
-
-tr:hover 
-    background-color: rgb(250, 248, 117)
-
-.row
-    background-color: white
-
-.row-cols-2>*
-    padding-bottom: 5px
-    padding-top: 5px
 
 .text-center
     padding-bottom: 15px
+
+.btn-center
+    border: 2px solid $border-color
+
+
+.form-check-input:checked
+    background-color: $checked-color
+    border-color: $border-color-check
+
+.form-check-input .form-check-input:checked
+  background-color: green!important
+

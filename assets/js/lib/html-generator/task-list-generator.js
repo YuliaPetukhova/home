@@ -1,5 +1,3 @@
-import {Task} from "../DTO/Task.js";
-
 export class TaskListGenerator
 {
     generateList(tasks) {

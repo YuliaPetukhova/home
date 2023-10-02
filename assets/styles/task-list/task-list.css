@@ -1,43 +1,35 @@
- html,
+html,
 body {
   height: 100%;
-  background: #fafafa;
+  background: #ffffff;
   font-size: 16px;
   font-weight: 700;
-  font-family: "Open Sans";
+  font: "Open Sans";
 }
 
-.topnav a {
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.5803921569);
+.container {
+  width: 100%;
+  height: auto;
 }
 
-.topnav a:hover {
-  text-decoration: underline;
-  color: rgba(173, 173, 173, 0.5803921569);
-}
-
-.topnav a.nav-item {
-  text-decoration: underline;
-}
-
-.col-2, .col-4, td {
-  text-align: center;
-}
-
-tr:hover {
-  background-color: rgb(250, 248, 117);
-}
-
-.row {
-  background-color: white;
-}
-
-.row-cols-2 > * {
-  padding-bottom: 5px;
-  padding-top: 5px;
+#content {
+  border: 2px solid #ececec;
+  box-shadow: 3px 3px 4px #ececec;
 }
 
 .text-center {
   padding-bottom: 15px;
 }
+
+.btn-center {
+  border: 2px solid #6c757d;
+}
+
+.form-check-input:checked {
+  background-color: green;
+  border-color: rgba(115, 207, 104, 0.25);
+}
+
+.form-check-input .form-check-input:checked {
+  background-color: green !important;
+}/*# sourceMappingURL=task-list.css.map */
