@@ -21,12 +21,14 @@
 <div class="container">
 
     <section id="content">
+      
+      <div id="task-group-title">Название группы задач</div>
       <div class="task-list">
         <div class="task-list__item row row-cols-3">
             <div class="task-list__item__date col text-muted">Дедлайн</div>
             <div class="task-list__item__group col text-muted">Группа задач</div>
             <div class="task-list__item__price col text-muted">Баллы</div>
-            <div class="task-list__item__text col">Текст задачи: Убраться везде</div>
+            <div class="task-list-text">Текст задачи: Убраться везде</div>
             <div class="task-list__item__check col"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></div>
         </div>
       </div>
@@ -88,7 +90,9 @@
   
   </div>
 
-    <script src="assets/js/main-page/main-page.js"></script>
+    <script type="module" src="assets/js/task-list/index.js"></script>
+    <script  type="module" src="assets/js/task-list/get-api.js"></script>
+    <script  type="module" src="assets/js/task-list/home-task-list.js"></script>
 
   </body>
 </html>

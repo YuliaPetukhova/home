@@ -12,9 +12,10 @@ body {
   height: auto;
 }
 
-#content {
+.task-list {
   border: 2px solid #ececec;
   box-shadow: 3px 3px 4px #ececec;
+  padding-bottom: 15px;
 }
 
 .text-center {
