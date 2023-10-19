@@ -17,24 +17,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </head>
 <body>
+
+  <div class="topnav" id="navbarCenteredExample">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Баллы/Целевые</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Имя</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-cog"></i></a>
+      </li>
+</div>
    
 <div class="container">
 
     <section id="content">
-      
-      <div id="task-group-title">Название группы задач</div>
-      <div class="task-list">
+    
+      <!-- <div class="task-list">
         <div class="task-list__item row row-cols-3">
             <div class="task-list__item__date col text-muted">Дедлайн</div>
             <div class="task-list__item__group col text-muted">Группа задач</div>
             <div class="task-list__item__price col text-muted">Баллы</div>
-            <div class="task-list-text">Текст задачи: Убраться везде</div>
+            <div class="task-list__item__text">Текст задачи: Убраться везде</div>
             <div class="task-list__item__check col"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></div>
         </div>
-      </div>
+      </div> -->
     </section>
 
-    
+    <div id="spinner"></div>
     <section id="bottom-menu" class="fixed-bottom">
                 <div class="text-center">
                   <div class="btn-group dropup col-3">
@@ -48,13 +60,13 @@
                     </ul>
                   </div>
                 <!-- <button href="#" class="btn btn-secondary col-3 btn-left dropdown-toggle"><i class="fa-solid fa-list-ol"></i></button> -->
-                <button type="button" class="btn btn-light p-3 rounded-circle btn-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus" style="color: #000000;"></i></button>
+                <button type="button" id="myBtn" class="btn btn-light p-3 rounded-circle btn-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus" style="color: #000000;"></i></button>
                 <button href="#" class="btn btn-secondary col-3 btn-right"><i class="fa-solid fa-list-check"></i></button>
             </div>
     </section>
 
     <!-- Modal-NEW-Task -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade add-task-modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -62,24 +74,20 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="row g-3 needs-validation" novalidate>
+            <form class="row g-3 needs-validation add-task-form" novalidate>
               <div class="mb-3">
                 <label for="task-table">Группа задач</label>
-                <input list="tasks" name="task-add" id="task-add">
-                <datalist id="tasks">
-                  <option value="Посуда">
-                  <option value="Мусор">
-                  <option value="Пол">
-                  <option value="Магазин">
-                </datalist>
+                <select name="taskGroupId" id="taskGroup">
+                  <option value="1">Домашние дела</option>
+                  <option value="2">Очень странные дела</option>
+                </select>
               </div>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Текст</label>
-                <textarea class="form-control" id="message-text" required></textarea>
+                <textarea class="form-control" id="message-text" name="text" required></textarea>
               </div>
                 <div class="col-12">
-                  <button class="btn btn-warning" type="submit">Создать
-                  </button>
+                  <button class="btn btn-warning add-task-btn" type="submit">Создать</button>
                 </div>
               </form>
           </div>
@@ -93,6 +101,10 @@
     <script type="module" src="assets/js/task-list/index.js"></script>
     <script  type="module" src="assets/js/task-list/get-api.js"></script>
     <script  type="module" src="assets/js/task-list/home-task-list.js"></script>
+    <script  src="assets/js/task-list/spinner.js"></script>    
+    <script  src="assets/js/task-list/add-task/add-task.js"></script>
+
+
 
   </body>
 </html>

@@ -7,6 +7,20 @@ body {
   font: "Open Sans";
 }
 
+.topnav a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5803921569);
+}
+
+.topnav a:hover {
+  text-decoration: underline;
+  color: rgba(173, 173, 173, 0.5803921569);
+}
+
+.topnav a.nav-item {
+  text-decoration: underline;
+}
+
 .container {
   width: 100%;
   height: auto;
@@ -15,7 +29,6 @@ body {
 .task-list {
   border: 2px solid #ececec;
   box-shadow: 3px 3px 4px #ececec;
-  padding-bottom: 15px;
 }
 
 .text-center {
@@ -33,4 +46,20 @@ body {
 
 .form-check-input .form-check-input:checked {
   background-color: green !important;
+}
+
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner__img {
+  width: 50px;
+  height: 50px;
 }/*# sourceMappingURL=task-list.css.map */

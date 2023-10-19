@@ -17,55 +17,54 @@ class GetTableByApi
     //         console.log(error);
     //     });
     // }
+    
+
     getStringTable() {
+        spinnerPage.render();
+
         axios.get('http://192.168.1.141/api/v1/family-task/task-group/group/1')
         .then(function (response) {
+
+            const ROOT_TASK = document.getElementById('content');
+            let htmlCatalog = '';
             
             let taskGroup = response.data;
-            console.log(taskGroup);
+
             let taskGroupTitle = response.data.title;
             let tasks = taskGroup.tasks;
 
-            let firstTask = tasks[1];
-            let taskText = firstTask.text;
-
-            let dedline = firstTask.createdAt;
-
-            let taskGroupTitleElement = document.getElementById("task-group-title");
-            taskGroupTitleElement.innerHTML = taskGroupTitle;
-            console.log(taskGroupTitleElement);
-        
-
-            let taskTextElement = document.getElementsByClassName("task-list-text")[0];
-            console.log(taskTextElement);
-            taskTextElement.innerHTML = taskText;
-
-            let dataElement = document.getElementsByClassName("task-list__item__date")[0];
-            dataElement.innerHTML = dedline;
-
+            let pointTask = '0 баллов';
            
-            // let rowTaskItem = document.getElementsByClassName("row");
-            // let rowTaskItemSize = document.getElementsByClassName("row-cols-3");
-            
-            // let taskGroupTitleElement2 = taskGroupTitleElement.getElementById("task-group-title");
+            tasks.forEach(({ createdAt, text, doneAt}) => {
+                const isTaskDone = doneAt !== null;
+               
+                htmlCatalog += `
+                <div class="task-list">
+                    <div class="task-list__item row row-cols-3">
+                        <div class="task-list__item__date col text-muted">${createdAt}</div>
+                        <div class="task-list__item__group col text-muted">${taskGroupTitle}</div>
+                        <div class="task-list__item__price col text-muted"> ${pointTask}</div>
+                        <div class="task-list__item__text">${text}</div>
+                        <div class="task-list__item__check col">
+                            <input type="checkbox" name="checkbox" ${isTaskDone ? 'checked' : ''}>
+                        </div>
+                    </div>
+                </div>
+                `;
+                
+            });
 
-            // console.log(response.data.tasks[0]);
-
-            // let taskListlGenerator = new TaskListGenerator();
-            // let generatedList = taskListlGenerator.generateList(tasks);
+            setTimeout(() => {
+                spinnerPage.handleClear();
+            }, 1000);
             
-            // .preloader.скрыть d-none addclass;
-            // preloader.classList.add("d-none");
-            
-            // let contentSection = document.getElementById("content");
-            // contentSection.appendChild(generatedList);
-            // console.log(contentSection);
+            ROOT_TASK.innerHTML = htmlCatalog;
         })
-        // .catch(function (error) {
-        //     console.log(error);
-        // });
+        .catch(function (error) {
+            console.log(error);
+        });   
     }
-
+    
     init() {
         this.getStringTable();
     }
